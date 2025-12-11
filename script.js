@@ -1,31 +1,30 @@
-// -----------------------------
-// 1. Función para calcular propina
-// -----------------------------
-function calcularPropina(montoCuenta, porcentajePropina) {
-  const propina = montoCuenta * (porcentajePropina / 100);
-  return propina;
-}
+// ----------------------------
+// 1. CAPTURA DE DATOS
+// ----------------------------
+let nombre = prompt("Ingrese su nombre:");
+let apellido = prompt("Ingrese su apellido:");
 
-// -----------------------------
-// 2. Captura de datos del usuario
-// -----------------------------
-let monto = parseFloat(prompt("Ingrese el monto total de la cuenta:"));
-let porcentaje = parseFloat(prompt("Ingrese el porcentaje de propina que desea dejar:"));
+// ----------------------------
+// 2. PROCESAMIENTO DE TEXTO
+// ----------------------------
 
-// -----------------------------
-// 3. Invocación de la función
-// -----------------------------
-let montoPropina = calcularPropina(monto, porcentaje);
+// Primera letra del nombre
+let inicialNombre = nombre.charAt(0).toLowerCase();
 
-// -----------------------------
-// 4. Cálculo del total
-// -----------------------------
-let totalPagar = monto + montoPropina;
+// Primeras 3 letras del apellido
+let primerasApellido = apellido.slice(0, 3).toLowerCase();
 
-// -----------------------------
-// 5. Mostrar resultados
-// -----------------------------
-console.log("--- Resumen de la Cuenta ---");
-console.log(`Monto de la cuenta: $${monto}`);
-console.log(`Propina (${porcentaje}%): $${montoPropina}`);
-console.log(`Total a pagar: $${totalPagar}`);
+// ----------------------------
+// 3. NÚMERO ALEATORIO (10 - 99)
+// ----------------------------
+let numeroAleatorio = Math.floor(Math.random() * 90) + 10;
+
+// ----------------------------
+// 4. ENSAMBLAJE DEL USUARIO
+// ----------------------------
+let nombreUsuario = inicialNombre + primerasApellido + numeroAleatorio;
+
+// ----------------------------
+// 5. RESULTADO FINAL
+// ----------------------------
+console.log("Tu nuevo nombre de usuario es: " + nombreUsuario);
